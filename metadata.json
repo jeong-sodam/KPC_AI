@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix KPC Enterprise AI 플랫폼 커뮤니티",
+  "description": "한국생산성본부(KPC) 사내용 Enterprise AI 플랫폼 - DIA 지능형 AI Chat 및 제안서·보고서 자동화 시스템",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

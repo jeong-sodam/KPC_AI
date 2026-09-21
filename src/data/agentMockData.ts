@@ -1,0 +1,282 @@
+import { VerifiedAgent } from '../types';
+
+export const VERIFIED_AGENTS_DATA: VerifiedAgent[] = [
+  {
+    id: 'agent-1',
+    name: '제안서 검토 Agent',
+    code: 'AGENT-RFP-01',
+    version: 'v1.3',
+    category: 'RFP·제안',
+    description: 'RFP 요구사항과 평가 기준을 분석하여 제안서 작성에 필요한 주요 정보를 정리합니다.',
+    oneLineDesc: 'RFP 요구사항과 평가 기준을 분석하여 제안서 작성에 필요한 주요 정보를 정리합니다.',
+    longDescription: 'KPC 제안사업본부 표준 제안방법론과 조달청·국가계약법 기준을 준수하는 공공 및 민간 입찰 특화 Agent입니다. 수백 페이지 분량의 RFP 문서에서 필수 자격 요건, 보안 규정, 배점 기준표를 1분 이내에 추출하고, 감점 요인을 사전에 완벽히 식별합니다.',
+    author: '정소담',
+    department: 'AI전략팀',
+    maintainer: '정소담 책임연구원',
+    auditDate: '2026.09.10',
+    createdAt: '2026.09.10',
+    updatedAt: '2026.09.10',
+    auditScore: 99.4,
+    auditPassed: true,
+    securityCertification: 'KPC-SEC-VERIFIED-2026-A1',
+    executionCount: 1420,
+    rating: 4.9,
+    reviewCount: 38,
+    likes: 124,
+    userLiked: false,
+    commentsCount: 18,
+    tags: ['RFP', '제안서', '문서분석'],
+    status: '전사 배포',
+    screenshots: [
+      'https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80'
+    ],
+    capabilities: [
+      'RFP 비정형 문서 고속 파싱 및 요구사항 매트릭스 도출',
+      '기술·가격 배점 기준표 자동 분석 및 요약',
+      '공고 참여 시 필수 상주 조건 및 인력 자격 사전 검증',
+      '독소 조항 및 감점 리스크 경고 리포트 생성'
+    ],
+    tools: ['RFP Extractor', 'Compliance Checker', 'Risk Detector'],
+    systemPromptSample: 'You are KPC Proposal Review Specialist. Analyze the provided RFP document and extract core requirements, evaluation scorecard, and compliance risks...',
+    inputsSample: [
+      { key: 'rfpDoc', label: '검토할 RFP 문서 파일 첨부', placeholder: 'PDF, HWP, DOCX 문서 업로드', type: 'text' },
+      { key: 'focusPoint', label: '중점 검토 항목', placeholder: '전체 분석 또는 특정 항목 선택', type: 'select', options: ['전체 심층 분석', '평가배점표 및 정량감점 요건', '보안 및 상주 인력 요건'] }
+    ],
+    outputSample: `[제안서 검토 Agent 분석 결과 리포트]\n1. 사업명: 2026년 공공 스마트 업무플랫폼 구축 사업 (예산 25.0억, 사업기간 10개월)\n2. 필수 참가자격: 온프레미스 망분리 보안 통제 100% 필수, 총괄 PM 최근 3년 이내 동급 실적 보유\n3. 배점 기준표: 기술평가(90점) - 수행역량(30) + 기술구현(40) + 사후지원(20) / 가격평가(10점)\n4. 주요 리스크: 보안 관제 인력 80% 상주 필수 요건(주의), 지체상금율 일 0.05% 적용`,
+  },
+  {
+    id: 'agent-2',
+    name: '회의록 요약 Agent',
+    code: 'AGENT-MEETING-02',
+    version: 'v2.1',
+    category: '회의·요약',
+    description: '회의록에서 핵심 내용과 Action Item을 자동으로 추출합니다.',
+    oneLineDesc: '회의록에서 핵심 내용과 Action Item을 자동으로 추출합니다.',
+    longDescription: '장시간 진행된 회의 대화록 또는 메모를 입력하면 주요 논의 안건, 결정 사항, 후속 조치(담당자, 기한)를 KPC 사내 표준 보고서 양식에 맞춰 완벽히 요약합니다.',
+    author: '김OO',
+    department: '디지털혁신팀',
+    maintainer: '김OO 수석',
+    auditDate: '2026.09.08',
+    createdAt: '2026.09.08',
+    updatedAt: '2026.09.08',
+    auditScore: 98.9,
+    auditPassed: true,
+    securityCertification: 'KPC-SEC-VERIFIED-2026-A2',
+    executionCount: 2310,
+    rating: 4.8,
+    reviewCount: 42,
+    likes: 98,
+    userLiked: false,
+    commentsCount: 14,
+    tags: ['회의', '요약', '업무자동화'],
+    status: '전사 배포',
+    screenshots: [
+      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&auto=format&fit=crop&q=80'
+    ],
+    capabilities: [
+      '회의 대화 텍스트 및 속기록의 핵심 아젠다 3대 요약',
+      '참석자별 의사결정 및 찬반 의견 구조화',
+      'Action Item(담당자, 마감 일정) 자동 분리 및 표 정리',
+      'KPC 주간 업무보고 템플릿 연동 서식 출력'
+    ],
+    tools: ['Meeting Summarizer', 'Action Item Extractor', 'Agenda Parser'],
+    systemPromptSample: 'You are KPC Meeting Assistant. Extract key discussion topics, final decisions, and action items with assignees...',
+    inputsSample: [
+      { key: 'meetingNotes', label: '회의록 본문 또는 음성 변환 텍스트', placeholder: '회의 메모나 대화록을 붙여넣으세요', type: 'textarea' },
+      { key: 'department', label: '주관 부서', placeholder: '예: AI사업본부', type: 'text' }
+    ],
+    outputSample: `[회의록 핵심 요약본]\n1. 일시 및 장소: 2026.09.08 14:00 (대회의실 / 화상 병행)\n2. 주요 의결사항: 4분기 사내 AI Agent 시범 오픈 일정 확정, DLP 보안 가이드라인 준수 승인\n3. 후속 실행 과제 (Action Item):\n   - [정소담/AI전략팀] 9/15까지 검수 프로세스 가이드 배포\n   - [김OO/디지털혁신팀] 9/18까지 서버 리소스 증설 테스트 완료`,
+  },
+  {
+    id: 'agent-3',
+    name: '시장조사 Agent',
+    code: 'AGENT-MARKET-03',
+    version: 'v1.2',
+    category: '검색·분석',
+    description: '시장 및 경쟁사 조사 결과를 보고서 형태로 구조화합니다.',
+    oneLineDesc: '시장 및 경쟁사 조사 결과를 보고서 형태로 구조화합니다.',
+    longDescription: '국내외 최신 산업 통계, 주요 경쟁 기관의 비즈니스 동향, 정책 보고서 데이터를 종합하여 전략 기획 및 컨설팅 제안에 즉시 활용할 수 있는 시장 분석 보고서를 작성합니다.',
+    author: '박OO',
+    department: '컨설팅본부',
+    maintainer: '박OO 팀장',
+    auditDate: '2026.09.05',
+    createdAt: '2026.09.05',
+    updatedAt: '2026.09.05',
+    auditScore: 97.8,
+    auditPassed: true,
+    securityCertification: 'KPC-SEC-VERIFIED-2026-A3',
+    executionCount: 980,
+    rating: 4.7,
+    reviewCount: 21,
+    likes: 76,
+    userLiked: false,
+    commentsCount: 9,
+    tags: ['시장조사', '리서치', '보고서'],
+    status: '전사 배포',
+    screenshots: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80'
+    ],
+    capabilities: [
+      '국내외 산업 시장 규모(TAM/SAM/SOM) 및 성장률(CAGR) 추정치 정리',
+      '주요 경쟁사 솔루션 스펙 및 포지셔닝 맵 비교',
+      'PESTLE 및 SWOT 분석 프레임워크 자동 매핑',
+      '경영진 보고용 인포그래픽 요약문 도출'
+    ],
+    tools: ['Industry Data Analyzer', 'Competitor Profiler', 'Market Sizer'],
+    systemPromptSample: 'You are KPC Market Research Analyst. Structure market trends, competitor benchmarking, and strategic insights...',
+    inputsSample: [
+      { key: 'targetMarket', label: '조사 대상 산업/키워드', placeholder: '예: 공공부문 온프레미스 생성형 AI 시장', type: 'text' },
+      { key: 'analysisType', label: '분석 프레임워크', placeholder: '선택하세요', type: 'select', options: ['시장 규모 및 성장률', '경쟁사 비교 분석', 'SWOT / PESTLE 종합 분석'] }
+    ],
+    outputSample: `[시장 및 경쟁사 조사 분석 브리프]\n1. 시장 개요: 국내 공공 생성형 AI 시장 규모 2026년 4,200억 원 전망 (연평균 성장률 34.2%)\n2. 경쟁 환경: 대형 SI 3사와 전문 AI 솔루션 기업 컨소시엄 경쟁 심화\n3. KPC 차별화 기회: 공공 컨설팅 역량과 결합된 산업 도메인 특화 sLLM 온프레미스 패키지 우위\n4. 정책 제언: 데이터 주권 및 망분리 규제 완화 트렌드에 선제 대응 필요`,
+  },
+  {
+    id: 'agent-4',
+    name: '계약서 검토 Agent',
+    code: 'AGENT-CONTRACT-04',
+    version: 'v1.0',
+    category: '문서작성',
+    description: '표준 계약서 및 용역 계약서의 독소 조항과 법적 위험 요소를 진단합니다.',
+    oneLineDesc: '표준 계약서 및 용역 계약서의 독소 조항과 법적 위험 요소를 진단합니다.',
+    longDescription: 'KPC 법무팀 표준 계약 가이드라인을 학습하여 비밀유지, 지식재산권 귀속, 분쟁 해결 관할 법원 등 법적 리스크 요소를 사전에 정밀 검토합니다.',
+    author: '최OO',
+    department: '법무준법팀',
+    maintainer: '최OO 변호사',
+    auditDate: '2026.09.04',
+    createdAt: '2026.09.04',
+    updatedAt: '2026.09.04',
+    auditScore: 99.1,
+    auditPassed: true,
+    securityCertification: 'KPC-SEC-VERIFIED-2026-A4',
+    executionCount: 1120,
+    rating: 4.9,
+    reviewCount: 29,
+    likes: 85,
+    userLiked: false,
+    commentsCount: 11,
+    tags: ['계약서', '법무검토', '리스크'],
+    status: '전사 배포',
+    screenshots: [
+      'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&auto=format&fit=crop&q=80'
+    ],
+    capabilities: [
+      'KPC 표준 계약 약관 대비 누락 조항 자동 식별',
+      '지체상금율(1일 0.05% 초과 여부) 법정 한도 검토',
+      '지식재산권 공동 귀속 및 단독 귀속 불공정 조항 탐지'
+    ],
+    tools: ['Legal Clause Checker', 'Penalty Auditor'],
+    systemPromptSample: 'You are KPC Corporate Legal Reviewer. Screen contracts for legal risks, penalty clauses, and compliance with company bylaws...',
+    inputsSample: [
+      { key: 'contractText', label: '계약서 본문 텍스트', placeholder: '검토할 계약서 조항을 입력하세요', type: 'textarea' }
+    ],
+    outputSample: `[계약서 법무 검토 소견]\n- 제8조(지체상금): 1일당 0.1% 적용 조항은 국가계약법 기준(0.05%) 초과로 수정 협의 권고\n- 제12조(지식재산권): 성과물 발주처 단독 귀속 조항 -> KPC 공동 소유로 수정 필요\n- 총평: 리스크 등급 '주의(B)' 판정`,
+  },
+  {
+    id: 'agent-5',
+    name: '보고서 작성 Agent',
+    code: 'AGENT-REPORT-05',
+    version: 'v1.5',
+    category: '문서작성',
+    description: '개요와 핵심 키워드를 기반으로 KPC 표준 비즈니스 보고서 초안을 작성합니다.',
+    oneLineDesc: '개요와 핵심 키워드를 기반으로 KPC 표준 비즈니스 보고서 초안을 작성합니다.',
+    longDescription: '경영기획, 사업제안, 성과보고 등 KPC 5대 사내 보고서 서식에 맞춰 두괄식 요약문과 본문 목차 구조를 자동으로 생성하고 신뢰할 수 있는 수치 데이터를 매핑합니다.',
+    author: '강OO',
+    department: '경영기획팀',
+    maintainer: '강OO 책임',
+    auditDate: '2026.09.03',
+    createdAt: '2026.09.03',
+    updatedAt: '2026.09.03',
+    auditScore: 98.6,
+    auditPassed: true,
+    securityCertification: 'KPC-SEC-VERIFIED-2026-A5',
+    executionCount: 1680,
+    rating: 4.8,
+    reviewCount: 34,
+    likes: 112,
+    userLiked: false,
+    commentsCount: 15,
+    tags: ['보고서', '문서작성', '기획'],
+    status: '전사 배포',
+    screenshots: [
+      'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80'
+    ],
+    capabilities: [
+      'KPC 표준 보고서 서식(개요-현황-문제점-추진방안-기대효과) 템플릿',
+      '두괄식 핵심 메시지 및 1페이지 Summary 브리핑 생성',
+      '보고서 문체 표준화 (명사형 종결 어미 일괄 정돈)'
+    ],
+    tools: ['Report Generator', 'Executive Summarizer'],
+    systemPromptSample: 'You are KPC Business Report Specialist. Draft structured reports complying with KPC document guidelines...',
+    inputsSample: [
+      { key: 'reportTitle', label: '보고서 제목', placeholder: '예: 2026년 하반기 사내 AI 플랫폼 확산 계획', type: 'text' },
+      { key: 'keyPoints', label: '핵심 보고 내용', placeholder: '주요 안건 및 수치를 적어주세요', type: 'textarea' }
+    ],
+    outputSample: `[KPC 경영기획 표준 보고서 초안]\n1. 추진 배경: 전사 업무 효율화 및 문서 생성 업무 자동화 수요 급증\n2. 주요 현황: 시범 부서 3개 대상 파일럿 결과 업무 시간 35% 단축 검증\n3. 추진 방안: 10월 1일 전사 확대 및 직무별 Agent 템플릿 20종 배포\n4. 기대 효과: 연간 1.2만 시간 업무 절감 및 지식 자산화 촉진`,
+  },
+  {
+    id: 'agent-6',
+    name: '교육과정 설계 Agent',
+    code: 'AGENT-EDU-06',
+    version: 'v1.1',
+    category: '교육',
+    description: '산업 직무역량 기반 KPC 맞춤형 인재개발 커리큘럼 및 모듈별 강의 계획서를 자동 생성합니다.',
+    oneLineDesc: '산업 직무역량 기반 KPC 맞춤형 인재개발 커리큘럼 및 모듈별 강의 계획서를 자동 생성합니다.',
+    longDescription: 'KPC 인재개발본부 교육 과정 표준 모듈을 기반으로 직급별·직무별 맞춤 역량 프레임워크와 최신 산업 트렌드를 반영한 차별화된 교육 기획서를 구성합니다.',
+    author: '최OO',
+    department: '교육기획팀',
+    maintainer: '최OO 선임',
+    auditDate: '2026.09.02',
+    createdAt: '2026.09.02',
+    updatedAt: '2026.09.02',
+    auditScore: 98.4,
+    auditPassed: true,
+    securityCertification: 'KPC-SEC-VERIFIED-2026-A6',
+    executionCount: 750,
+    rating: 4.8,
+    reviewCount: 18,
+    likes: 62,
+    userLiked: false,
+    commentsCount: 7,
+    tags: ['교육', '커리큘럼', '인재개발'],
+    status: '전사 배포',
+    screenshots: [
+      'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&auto=format&fit=crop&q=80'
+    ],
+    capabilities: [
+      'NCS 및 KPC 역량 사전 매핑',
+      '차수별/시간별 실습 및 이론 커리큘럼 편성',
+      '학습자 평가 기준 및 기대효과 지표 산출'
+    ],
+    tools: ['Curriculum Designer', 'Competency Mapper'],
+    systemPromptSample: 'You are KPC Educational Curriculum Architect...',
+    inputsSample: [
+      { key: 'targetAudience', label: '교육 대상', placeholder: '예: 공공기관 팀장급 관리자', type: 'text' },
+      { key: 'topic', label: '교육 주제', placeholder: '예: 생성형 AI를 활용한 행정 혁신', type: 'text' }
+    ],
+    outputSample: `[KPC 2일 집중 교육 커리큘럼]\n- 모듈 1: AI 시대 공공 리더십과 데이터 거버넌스 (3h)\n- 모듈 2: 생성형 AI 기반 보고서 및 보도자료 실습 (4h)\n- 모듈 3: 프롬프트 엔지니어링 및 보안 취약점 점검 (3h)\n- 모듈 4: KPC AI Worker 업무 적용 실무 프로젝트 (4h)`,
+  }
+];
+
+export const AGENT_CATEGORIES = [
+  '전체',
+  '문서작성',
+  '검색·분석',
+  '회의·요약',
+  'RFP·제안',
+  '교육',
+  '데이터 분석',
+  '기타'
+] as const;
+
+export const AGENT_SORT_OPTIONS = [
+  '최신순',
+  '좋아요순',
+  '댓글순',
+  '사용량순'
+] as const;
